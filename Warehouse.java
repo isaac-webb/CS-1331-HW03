@@ -4,9 +4,10 @@ import java.util.Random;
 
 /**
  *
- * This file defines the properties and functionality of the Warehouse in our
- * warehouse program. Warehouses are essentially collections of Racks and are
- * responsible for the higher level management of items, orders, and item value.
+ * Defines the Warehouse, which is essentially a collection of Racks and is
+ * responsible for the higher level management of items, orders, and item
+ * value. It primarily interacts with Racks, which handle most of the adding
+ * and removing of Items.
  *
  * @author iwebb6
  */
@@ -14,6 +15,13 @@ import java.util.Random;
 public class Warehouse {
     private Rack[][] racks;
 
+    /**
+     * Constructor for a Warehouse which creates a 2-D array of Racks with the
+     * given number of rows. Each row is then populated with 5-10 (inclusive)
+     * empty Racks at random.
+     *
+     * @param rows The number of rows desired in this Warehouse's Rack array
+     */
     public Warehouse(int rows) {
         // Create the empty 2-D array
         racks = new Rack[rows][];
@@ -30,6 +38,14 @@ public class Warehouse {
         }
     }
 
+    /**
+     * Orders an Item with the given name from this Warehouse. If the Item is
+     * found, it is removed from the Rack it was found in and a reference to it
+     * is returned. Otherwise, null is returned.
+     *
+     * @param name The name of the Item being ordered
+     * @return A reference to the ordered Item, or null if it was not found
+     */
     public Item order(String name) {
         // Search each rack for an Item with the given name
         for (Rack[] rackArr : racks) {
@@ -42,9 +58,18 @@ public class Warehouse {
             }
         }
 
+        // Return null if the Item was not found in any Rack
         return null;
     }
 
+    /**
+     * Stores the given Item in the Warehouse. The Rack it will go in is chosen
+     * at random. If the Item is stored successfully, true is returned. If the
+     * chosen Rack is full, false is returned.
+     *
+     * @param item The Item to be stored in the Warehouse
+     * @return True if the Item was stored successfully, false otherwise
+     */
     public boolean store(Item item) {
         // Create the random number generator used to pick the rack
         Random rand = new Random();
@@ -53,13 +78,21 @@ public class Warehouse {
         int row = rand.nextInt(racks.length);
         int col = rand.nextInt(racks[row].length);
 
+        // Attempt to add the Item and return the result
         return racks[row][col].add(item);
     }
 
+    /**
+     * Returns the total value of all Items stored in the Warehouse. This is
+     * done by going through each Rack and summing the price of all contained
+     * Items.
+     *
+     * @return The value of all Items in the Warehouse
+     */
     public double totalAssets() {
         double total = 0.0;
 
-        // Go through each rack and sum all of the items' prices
+        // Go through each rack and add the price of each Item to the total
         for (Rack[] rackArr : racks) {
             for (Rack rack : rackArr) {
                 Item[] items = rack.getItems();
@@ -69,6 +102,7 @@ public class Warehouse {
             }
         }
 
+        // Return the sum of all of the prices
         return total;
     }
 }
