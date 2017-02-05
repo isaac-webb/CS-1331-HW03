@@ -1,12 +1,12 @@
 // I worked on the homework assignment alone, using only course materials.
 
 /**
- *
- * Defines an Item, more specifically an inventory item. Each item has a name,
- * price, and rating associated with it.
- *
- * @author iwebb6
- */
+  *
+  * Defines an Item, more specifically an inventory item. Each item has a name,
+  * price, and rating associated with it.
+  *
+  * @author iwebb6
+  */
 
 public class Item {
     private String name;
@@ -14,14 +14,14 @@ public class Item {
     private int rating;
 
     /**
-     * Constructor that defines the Item's name, price, and rating. Names should
-     * not be empty and prices should be nonnegative. Ratings are capped at a
-     * maximum of 5 and a minimum of 1.
-     *
-     * @param itemName The name of the Item
-     * @param itemPrice The price of the Item
-     * @param itemRating The rating of the Item
-     */
+      * Constructor that defines the Item's name, price, and rating. Names
+      * should not be empty and prices should be nonnegative. Ratings are capped
+      * at a maximum of 5 and a minimum of 1.
+      *
+      * @param itemName The name of the Item
+      * @param itemPrice The price of the Item
+      * @param itemRating The rating of the Item
+      */
     public Item(String itemName, double itemPrice, int itemRating) {
         // Assign the first two parameters to local variables
         name = itemName;
@@ -39,28 +39,28 @@ public class Item {
     }
 
     /**
-     * Getter for the Item's name property
-     *
-     * @return The Item's name
-     */
+      * Getter for the Item's name property
+      *
+      * @return The Item's name
+      */
     public String getName() {
         return name;
     }
 
     /**
-     * Getter for the Item's price property
-     *
-     * @return The Item's price
-     */
+      * Getter for the Item's price property
+      *
+      * @return The Item's price
+      */
     public double getPrice() {
         return price;
     }
 
     /**
-     * Getter for the Item's rating property
-     *
-     * @return The Item's rating
-     */
+      * Getter for the Item's rating property
+      *
+      * @return The Item's rating
+      */
     public int getRating() {
         return rating;
     }

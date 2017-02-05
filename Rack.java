@@ -1,12 +1,12 @@
 // I worked on the homework assignment alone, using only course materials.
 
 /**
- *
- * Defines a Rack, which is a collection of Items. Racks deal with storing
- * items, adding and removing them, and keeping track of the number of Items.
- *
- * @author iwebb6
- */
+  *
+  * Defines a Rack, which is a collection of Items. Racks deal with storing
+  * items, adding and removing them, and keeping track of the number of Items.
+  *
+  * @author iwebb6
+  */
 
 public class Rack {
     // Defines the maximum number of Items a Rack can hold
@@ -16,8 +16,8 @@ public class Rack {
     private int count;
 
     /**
-     * Constructor that creates an empty Rack with space for 10 Items
-     */
+      * Constructor that creates an empty Rack with space for 10 Items
+      */
     public Rack() {
         // Initialize the rack with space for MAX_ITEMS items and nothing in it
         items = new Item[MAX_ITEMS];
@@ -25,13 +25,13 @@ public class Rack {
     }
 
     /**
-     * Attempts to add the given Item to the Rack, returning true if there was
-     * enough room and false if the Rack was full and the Item could not be
-     * added.
-     *
-     * @param item The Item to be added to the Rack
-     * @return Whether or not adding the Item was successful
-     */
+      * Attempts to add the given Item to the Rack, returning true if there was
+      * enough room and false if the Rack was full and the Item could not be
+      * added.
+      *
+      * @param item The Item to be added to the Rack
+      * @return Whether or not adding the Item was successful
+      */
     public boolean add(Item item) {
         // Add in the item only if there is space in the rack
         if (count < MAX_ITEMS) {
@@ -44,15 +44,15 @@ public class Rack {
     }
 
     /**
-     * Searches the Rack for an Item with the given name and removes it from the
-     * Rack if it is found. If it is found, a reference to the Item is returned
-     * and the Item is removed from the Rack. If it is not, then null is
-     * returned.
-     *
-     * @param name The name of the Item to be removed
-     * @return A reference to the removed Item, or null if the Item was not
-     *         found
-     */
+      * Searches the Rack for an Item with the given name and removes it from
+      * the Rack if it is found. If it is found, a reference to the Item is
+      * returned and the Item is removed from the Rack. If it is not, then null
+      * is returned.
+      *
+      * @param name The name of the Item to be removed
+      * @return A reference to the removed Item, or null if the Item was not
+      *         found
+      */
     public Item remove(String name) {
         // Search the array only until the number of things in it
         for (int i = 0; i < count; i++) {
@@ -88,19 +88,19 @@ public class Rack {
     }
 
     /**
-     * Getter for the Rack's Item array
-     *
-     * @return The Rack's array of Items
-     */
+      * Getter for the Rack's Item array
+      *
+      * @return The Rack's array of Items
+      */
     public Item[] getItems() {
         return items;
     }
 
     /**
-     * Getter for the Rack's count property.
-     *
-     * @return The number of Items the Rack contains
-     */
+      * Getter for the Rack's count property.
+      *
+      * @return The number of Items the Rack contains
+      */
     public int getCount() {
         return count;
     }
