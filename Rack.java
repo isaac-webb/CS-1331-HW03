@@ -101,7 +101,7 @@ public class Rack {
       *
       * @return The number of Items the Rack contains
       */
-    public int getCount() {
+    public int count() {
         return count;
     }
 }

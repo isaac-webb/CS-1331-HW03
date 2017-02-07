@@ -96,7 +96,7 @@ public class Warehouse {
         for (Rack[] rackArr : racks) {
             for (Rack rack : rackArr) {
                 Item[] items = rack.getItems();
-                for (int i = 0; i < rack.getCount(); i++) {
+                for (int i = 0; i < rack.count(); i++) {
                     total += items[i].getPrice();
                 }
             }
