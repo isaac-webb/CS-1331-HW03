@@ -9,20 +9,8 @@
   */
 
 public class Rack {
-    // Defines the maximum number of Items a Rack can hold
-    private static final int MAX_ITEMS = 10;
-
-    private Item[] items;
-    private int count;
-
-    /**
-      * Constructor that creates an empty Rack with space for 10 Items
-      */
-    public Rack() {
-        // Initialize the rack with space for MAX_ITEMS items and nothing in it
-        items = new Item[MAX_ITEMS];
-        count = 0;
-    }
+    private Item[] items = new Item[10];
+    private int count = 0;
 
     /**
       * Attempts to add the given Item to the Rack, returning true if there was
@@ -34,7 +22,7 @@ public class Rack {
       */
     public boolean add(Item item) {
         // Add in the item only if there is space in the rack
-        if (count < MAX_ITEMS) {
+        if (count < items.length) {
             items[count++] = item;
             return true;
         }
